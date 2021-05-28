@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Галиуллин Т. ЛР1</title>
+	<script type="text/javascript" src="jquery.js"></script>			
+</head>
+<body>
+	<a href="index.html">Назад</a>
+		<h2>Задание 3.</h2>
+		<button id="right">Вправо</button>
+		<button  id="left">Влево</button>
+		<button  id="down">Вниз</button>
+		<button id="up">Вверх</button><br>
+		<span id="img" style="position: absolute;"> <img src="https://im0-tub-ru.yandex.net/i?id=eb5624df059e1daada67709eb45b5acc-l&n=13" alt="картинка" style="width: 300px; "></span><br>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#right").click(function() {
+					$("#img").animate({left:"+=100"})})
+				$("#left").click(function() {
+					$("#img").animate({left:"-=100"})})
+				$("#down").click(function() {
+					$("#img").animate({top: "+=100"})})
+				$("#up").click(function() {
+					$("#img").animate({top: "-=100"})})})
+	</script>	
+</body>
+</html>

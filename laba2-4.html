@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Галиуллин Т. ЛР1</title>
+	<script type="text/javascript" src="jquery.js"></script>			
+</head>
+<body>
+	<a href="index.html">Назад</a>
+		<h2>Задание 4.</h2>
+		<p>Координаты</p>
+		<div>
+			X: <span class="x"></span><br>
+			Y: <span class="y"></span>
+		</div>  
+		<script type="text/javascript">
+			$(document).mousemove(function(event){
+				event = event || window.event; 
+				console.log(event); 
+				document.querySelector('.x').innerHTML = event.offsetX;
+				document.querySelector('.y').innerHTML = event.offsetY;})</script>	
+</body>
+</html>
