@@ -1,0 +1,59 @@
+﻿<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Галиуллин Т. ЛР3</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+	let tek = 3;
+	window.addEventListener("load",function() {
+  var request = new XMLHttpRequest();
+  request.open('GET','2.php',true);
+  request.addEventListener('readystatechange', function() {
+    if ((request.readyState==4) && (request.status==200)) {
+      var welcome = document.getElementById('Output');
+      welcome.innerHTML = request.responseText;
+    }});
+request.send();
+});
+    function showRSS(str) {
+      alert("Отзыв добавлен!")
+		if (str.length==0) {
+    document.getElementById("Output").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    xmlhttp=new XMLHttpRequest();
+  } else { 
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("Output").innerHTML=this.responseText;
+    }
+  }
+  tek+=1;
+  var nam = document.getElementById("name").value, email = document.getElementById("email").value, otz=document.getElementById("otz").value;
+  var variables = "tek="+tek+"&name="+nam+"&email="+email+"&otz="+otz;
+	xmlhttp.open("GET","3.php?"+variables,true);
+	xmlhttp.send();}
+</script>
+</head>
+<body>
+  <a href="index.html">Назад</a>
+    <h2>Задание 2.</h2>
+    <h2>Отправьте свой отзыв на фильм "1+1"</h2>
+    <img src="https://avatars.mds.yandex.net/get-zen_doc/1645803/pub_5ede6446afcfa829399520a6_5ede6765b933d715fa05f74f/scale_1200" alt="" width="300px">
+    <form method="post" action="">
+		<p>Ваше имя: <input type="text" name="name" id="name"/></p>
+		<p>email: <input type="text" name="email" id="email"/></p>
+		<p>Отзыв: <input type="text" name="otz" id="otz"/></p>
+    <input onclick = "showRSS(this.value)" type="button" value="Отправить" />
+    </form>
+    <br>
+	<span id = "Output"></span>
+</div> 
+</body>
+</html>

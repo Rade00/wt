@@ -1,0 +1,68 @@
+﻿
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Галиуллин Т. ЛР3</title>
+</head>
+<body>
+	<script>
+		let tek = 5;
+		function showRSS(str) {
+			if (str.length==0) {
+    			document.getElementById("rssOutput").innerHTML="";
+    			return;}
+  			if (window.XMLHttpRequest) {
+    			xmlhttp=new XMLHttpRequest();
+  			} else { 
+    			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+  			xmlhttp.onreadystatechange=function() {
+    		if (this.readyState==4 && this.status==200) {
+      			document.getElementById("rssOutput").innerHTML=this.responseText;}}
+			   xmlhttp.open("GET","1.php?tek="+tek,true);
+			   xmlhttp.send();
+			   tek+=5;
+			}
+	</script>
+	</head>
+	<body>
+		<a href="index.html">Назад</a>
+			<h2>Задание 1.</h2>
+			<h3>С использованием XML</h3>
+		<section>
+			<h2>«Моногамия нагоняет на меня тоску»</h2>
+			<p>Как Саркози женился на самой сексуальной женщине Франции и пошел под суд за коррупцию</p>
+			<img src="https://icdn.lenta.ru/images/2021/05/26/22/20210526221543844/top7_a4dbba0728a8ea6039b52973a59bc2e7.jpg" alt="" width="300px">
+		</section>
+		<section>
+			<h2>«Для Москвы это стало сюрпризом»</h2>
+			<p>Запад намерен ввести санкции против Белоруссии. Как они навредят России?</p>
+			<img src="https://icdn.lenta.ru/images/2021/05/27/17/20210527175010180/top7_6bba69b05041941e8ee5ce99a41843a0.jpg" alt="" width="300px">
+		</section>
+		<section>
+			<h2>Вера крепчала</h2>
+			<p>Откуда в США появились музеи с динозаврами в Ноевом ковчеге и почему это никого не смущает</p>
+			<img src="https://icdn.lenta.ru/images/2021/05/28/18/20210528180554323/top7_83fdd2053ed6abe5e5d534e1c6196d69.jpg" alt="" width="300px">
+		</section>
+		<section>
+			<h2>Больная фантазия</h2>
+			<p>Прозрачная церковь, бриллианты и летящий ангел: как выглядят самые необычные здания мира</p>
+			<img src="https://icdn.lenta.ru/images/2021/03/31/17/20210331175818885/top7_8d9d1d9f3d2eb00f1d1d081d21269d50.jpg" alt="" width="300px">
+		</section>
+		<section>
+			<h2>«Это будет катастрофа»</h2>
+			<p>До Олимпиады в Токио осталось два месяца. Почему японцы требуют ее отмены?</p>
+			<img src="https://icdn.lenta.ru/images/2021/05/27/13/20210527130251453/top7_5c01cdc27cdce4fa362ddebe6dc1d978.jpg" alt="" width="300px">
+		</section>
+		<span id = "rssOutput"></span>
+		<form>
+			<input onclick = "showRSS(this.value)" type="button" value="Загрузить">
+		</form>
+		<br>
+</div>
+	</body>
+	</html> 
